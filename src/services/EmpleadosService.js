@@ -22,7 +22,7 @@ export default class EmpleadosaxiosService {
 
   // Método para obtener el token almacenado en Global
   getToken() {
-    return Global.token;
+    return localStorage.getItem('authToken')
   }
 
   isLogged() {
@@ -40,7 +40,7 @@ export default class EmpleadosaxiosService {
     const token = this.getToken();
     if (!token) throw new Error('Token no disponible');
 
-    const request = 'Empleados/PerfilEmpleado';
+    const request = 'api/Empleados/PerfilEmpleado';
     try {
       const response = await axios.get(Global.apiEmpleados + request, {
         headers: {
