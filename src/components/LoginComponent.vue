@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import Global from '@/Global';
 import EmpleadosaxiosService from '../services/EmpleadosService';
 
 const empleadosService = new EmpleadosaxiosService();
@@ -49,7 +48,7 @@ export default {
         async login() {
             try {
                 const response = await empleadosService.login(this.userName, this.password);
-                Global.token = response.response;
+                localStorage.setItem('authToken', response.response)
                 this.$router.push('/profile'); // Redirigir después del login exitoso
             } catch (error) {
                 this.errorMessage = "Usuario o contraseña incorrectos";
