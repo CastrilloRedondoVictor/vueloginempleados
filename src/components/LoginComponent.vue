@@ -46,7 +46,7 @@ export default {
     },
     methods: {
         async login() {
-<<<<<<< HEAD
+
             try {
                 const response = await empleadosService.login(this.userName, this.password);
                 localStorage.setItem('authToken', response.response)
@@ -55,10 +55,9 @@ export default {
                 this.errorMessage = "Usuario o contraseña incorrectos";
                 console.error("Error en el inicio de sesión:", error);
             }
-=======
+
             empleadosService.login(this.userName, this.password).then(response => {
                 localStorage.setItem('authToken', response.response);
-                Global.token = response.response;
                 this.$router.push('/profile');
             });
         }
@@ -66,7 +65,7 @@ export default {
     mounted() {
         if(localStorage.getItem('authToken') != ''){
             this.$router.push('/profile');
->>>>>>> 0e1f3ee419f4f970f7010b8610aa9c45e4f39250
+
         }
     }
 };

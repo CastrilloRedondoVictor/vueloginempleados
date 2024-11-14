@@ -2,12 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './Router';
 
-<<<<<<< HEAD
-import 'bootstrap/dist/css/bootstrap.css'
-=======
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
->>>>>>> 0e1f3ee419f4f970f7010b8610aa9c45e4f39250
+
 
 // Crear la aplicación
 const app = createApp(App);

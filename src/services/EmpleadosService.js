@@ -59,13 +59,9 @@ export default class EmpleadosaxiosService {
 
   // Método para obtener el token almacenado en Global
   getToken() {
-<<<<<<< HEAD
     return localStorage.getItem('authToken');
-=======
-    return localStorage.getItem('authToken')
->>>>>>> 0e1f3ee419f4f970f7010b8610aa9c45e4f39250
   }
-
+  
   isLogged() {
     return !!this.getToken();
   }
